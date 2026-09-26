@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Vifari",
+  "version": "0.1.0",
+  "description": "Minimal vim-style keyboard navigation: link hints and scrolling.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

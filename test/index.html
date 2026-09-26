@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Vifari test page</title>
+<style>
+  body { font: 16px/1.5 -apple-system, sans-serif; margin: 2rem; }
+  .pane { height: 200px; overflow: auto; border: 1px solid #ccc; margin: 1rem 0; }
+  .tall { height: 3000px; background: linear-gradient(#fff, #ddd); }
+  .covered { position: relative; }
+  .cover { position: absolute; inset: 0; background: rgba(0,0,0,.8); }
+</style>
+<p><a href="#one" id="a1">Link one</a> · <a href="#two">Link two</a> · <button onclick="log('button')">Button</button></p>
+<p><input placeholder="text input"> <input type="checkbox" id="cb"> <label for="cb">checkbox</label></p>
+<p><span role="button" tabindex="0" onclick="log('role=button')">role=button span</span></p>
+<p><a href="#wrapped"><div role="button">Nested clickable (one hint expected)</div></a></p>
+<p class="covered"><a href="#hidden">Covered link (no hint expected)</a><span class="cover"></span></p>
+<p style="display:none"><a href="#nope">display:none link</a></p>
+<div class="pane"><div style="height:1000px">Scrollable pane — click in here, then j/k scrolls it. <a href="#pane">pane link</a></div></div>
+<p id="log">log:</p>
+<div class="tall"><a href="#bottom" style="position:absolute; top:2900px">bottom link</a></div>
+<script>function log(m) { document.getElementById('log').textContent += ' ' + m; }</script>
