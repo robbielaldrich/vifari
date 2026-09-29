@@ -18,8 +18,15 @@ the largest scrollable element (for app-style pages where the body doesn't scrol
 
 ## Layout
 
-- `extension/`: the WebExtension (`manifest.json` and `content.js`)
+- `extension/`: the WebExtension (`manifest.json`, `content.js`, `images/`)
 - `test/index.html`: a page that covers the edge cases (nested clickables, covered links, scroll panes)
+- `tools/make-icons.py`: draws `extension/images/`. The converter builds the
+  Xcode app icon out of these, so they have to be there and they have to be the
+  sizes the manifest claims. Run it after changing the mark:
+
+  ```sh
+  python3 tools/make-icons.py
+  ```
 
 ## Try it without Xcode (temporary install)
 
